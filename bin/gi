@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+process.bin = process.title = 'gi';
+
+var commander = require("commander"),
+    here = require("here").here,
+    gi = require("../lib");
+
+//command option
+commander.version("0.0.0")
+    .usage("[options] <keyword...>")
+    .option("-l, --list", "Show gitignore.io operating system, programming language, or IDE keyword types");
+
+//help message
+commander.on("--help", function(){
+    console.log(here(/*
+  Examples:
+
+    - Show ouput on the command line
+        $ gi linux,java
+        # Created by http://www.gitignore.io
+
+        ### Linux ###
+        .*
+        !.gitignore
+        *~
+
+        ### Java ###
+        *.class
+        # Package Files #
+        *.jar
+        *.war
+        *.ear
+
+    - Append Operating System and IDE settings to global .gitignore
+        $ gi linux,eclipse >> ~/.gitignore
+
+    - Append programming languages to your project .gitignore file
+        $ gi java,python >> .gitignore
+*/).unindent());
+});
+
+commander.parse(process.argv);
+
+if(commander.list){
+    //show keyword list
+    gi.list();
+}else if(commander.args.length > 0){
+    var words = commander.args.join(",");
+    gi.get(words);
+}
