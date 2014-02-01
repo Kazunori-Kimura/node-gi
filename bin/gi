@@ -45,7 +45,7 @@ commander.parse(process.argv);
 if(commander.list){
     //show keyword list
     gi.list();
-}else if(commander.args.length > 0){
+} else if(commander.args.length > 0){
     var words = commander.args.join(",");
     gi.get(words);
 }
