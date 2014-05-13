@@ -1,6 +1,6 @@
 {
   "name": "node-gi",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Create .gitignore files by http://www.gitignore.io",
   "main": "lib",
   "bin": {

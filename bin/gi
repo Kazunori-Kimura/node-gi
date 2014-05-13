@@ -6,8 +6,10 @@ var commander = require("commander"),
     here = require("here").here,
     gi = require("../lib");
 
+var package = require("../package.json");
+
 //command option
-commander.version("0.0.0")
+commander.version(package.version)
     .usage("[options] <keyword...>")
     .option("-l, --list", "Show gitignore.io operating system, programming language, or IDE keyword types");
 
