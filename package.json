@@ -1,6 +1,6 @@
 {
   "name": "node-gi",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Create .gitignore files by http://www.gitignore.io",
   "main": "lib",
   "bin": {
@@ -15,11 +15,9 @@
   "author": "kazunori.kimura.js@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "request": "~2.33.0",
-    "commander": "~2.1.0",
-    "here": "0.0.2"
+    "commander": "^2.9.0",
+    "request": "^2.69.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/Kazunori-Kimura/node-gi.git"

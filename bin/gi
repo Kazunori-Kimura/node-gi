@@ -1,21 +1,20 @@
 #!/usr/bin/env node
 
+"use strict";
 process.bin = process.title = 'gi';
 
-var commander = require("commander"),
-    here = require("here").here,
-    gi = require("../lib");
-
-var package = require("../package.json");
+const commander = require("commander");
+const gi = require("../lib");
+const pkg = require("../package.json");
 
 //command option
-commander.version(package.version)
+commander.version(pkg.version)
     .usage("[options] <keyword...>")
     .option("-l, --list", "Show gitignore.io operating system, programming language, or IDE keyword types");
 
 //help message
 commander.on("--help", function(){
-    console.log(here(/*
+    console.log(`
   Examples:
 
     - Show ouput on the command line
@@ -39,7 +38,7 @@ commander.on("--help", function(){
 
     - Append programming languages to your project .gitignore file
         $ gi java,python >> .gitignore
-*/).unindent());
+`);
 });
 
 commander.parse(process.argv);
@@ -48,6 +47,6 @@ if(commander.list){
     //show keyword list
     gi.list();
 } else if(commander.args.length > 0){
-    var words = commander.args.join(",");
+    const words = commander.args.join(",");
     gi.get(words);
 }
