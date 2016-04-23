@@ -1,6 +1,6 @@
 {
   "name": "node-gi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create .gitignore files by http://www.gitignore.io",
   "main": "lib",
   "bin": {
@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.9.0",
-    "request": "^2.69.0"
+    "request": "^2.72.0"
   },
   "repository": {
     "type": "git",
